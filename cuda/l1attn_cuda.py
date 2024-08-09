@@ -30,11 +30,8 @@ class L1Attn(nn.Module):
 
 	def forward(self, q, k):
 		return L1AttnFn.apply(q, k)
-<<<<<<< HEAD
-=======
 
 def will_use_optimized_kernel(tensor_shape):
     n_ctx = tensor_shape[1]
     width = tensor_shape[3]
     return (n_ctx % 16 == 0) and (width in [16, 32, 64])
->>>>>>> 11dc1eb (new files)
